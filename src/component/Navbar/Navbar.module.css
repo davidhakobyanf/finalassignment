@@ -1,0 +1,17 @@
+/* src/components/Navbar.module.css */
+.navbar {
+    background-color: #f8f9fa; /* Customize as needed */
+}
+
+.brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navLink {
+    color: #007bff !important; /* Customize link colors */
+}
+
+.navLink:hover {
+    color: #0056b3 !important; /* Hover state */
+}
