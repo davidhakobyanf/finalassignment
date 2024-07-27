@@ -39,19 +39,15 @@ const NavigationBar = ({ homeRef, servicesRef, footerRef, aboutRef }) => {
             className={`${styles.navbar} ${showNavbar ? styles.visible : styles.hidden}`}
         >
             <Navbar.Brand href="#home" className={styles.brand} onClick={() => handleScroll(homeRef)}>
-                <img
-                    src={logo} // Replace with your logo's path
-                    alt="Logo"
-                    className={styles.logo}
-                />
+                <i className="fa-solid fa-house"></i>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
+            <Navbar.Collapse id="basic-navbar-nav" style={{display:"flex", justifyContent:"flex-end", alignItems:"center", marginRight:"20px"}}>
                 <Nav className="ml-auto">
                     <Nav.Link onClick={() => handleScroll(homeRef)} className={styles.navLink}>Home</Nav.Link>
                     <Nav.Link onClick={() => handleScroll(servicesRef)} className={styles.navLink}>Services</Nav.Link>
                     <Nav.Link onClick={() => handleScroll(aboutRef)} className={styles.navLink}>About</Nav.Link>
-                    <Nav.Link onClick={() => handleScroll(footerRef)} className={styles.navLink}>Contact Us</Nav.Link>
+                    <Nav.Link onClick={() => handleScroll(footerRef)} className={styles.contact}>Contact Us</Nav.Link>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
