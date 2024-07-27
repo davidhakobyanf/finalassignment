@@ -1,18 +1,57 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
-import styles from './Navbar.module.css';
+import styles from './Navbar.module.css'; // Ensure this CSS file is correctly imported
+import logo from '../../images/lights-2203654_1920.jpg';
 
-const NavigationBar = () => {
+const NavigationBar = ({ homeRef, servicesRef, footerRef, aboutRef }) => {
+    const [showNavbar, setShowNavbar] = useState(true);
+    const [lastScrollY, setLastScrollY] = useState(0);
+
+    const handleScroll = (ref) => {
+        ref.current.scrollIntoView({ behavior: 'smooth' });
+    };
+
+    useEffect(() => {
+        const handleScrollDirection = () => {
+            const currentScrollY = window.scrollY;
+
+            if (currentScrollY < lastScrollY || currentScrollY < 50) {
+                setShowNavbar(true);
+            } else {
+                setShowNavbar(false);
+            }
+
+            setLastScrollY(currentScrollY);
+        };
+
+        window.addEventListener('scroll', handleScrollDirection);
+
+        return () => {
+            window.removeEventListener('scroll', handleScrollDirection);
+        };
+    }, [lastScrollY]);
+
     return (
-        <Navbar bg="light" expand="lg" className={styles.navbar}>
-            <Navbar.Brand href="home" className={styles.brand}>MyWebsite</Navbar.Brand>
+        <Navbar
+            bg="dark"
+            variant="dark"
+            expand="lg"
+            className={`${styles.navbar} ${showNavbar ? styles.visible : styles.hidden}`}
+        >
+            <Navbar.Brand href="#home" className={styles.brand} onClick={() => handleScroll(homeRef)}>
+                <img
+                    src={logo} // Replace with your logo's path
+                    alt="Logo"
+                    className={styles.logo}
+                />
+            </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="mr-auto">
-                    <Nav.Link href="home" className={styles.navLink}>Home</Nav.Link>
-                    <Nav.Link href="about" className={styles.navLink}>About</Nav.Link>
-                    <Nav.Link href="services" className={styles.navLink}>Services</Nav.Link>
-                    <Nav.Link href="contact" className={styles.navLink}>Contact</Nav.Link>
+                <Nav className="ml-auto">
+                    <Nav.Link onClick={() => handleScroll(homeRef)} className={styles.navLink}>Home</Nav.Link>
+                    <Nav.Link onClick={() => handleScroll(servicesRef)} className={styles.navLink}>Services</Nav.Link>
+                    <Nav.Link onClick={() => handleScroll(aboutRef)} className={styles.navLink}>About</Nav.Link>
+                    <Nav.Link onClick={() => handleScroll(footerRef)} className={styles.navLink}>Contact Us</Nav.Link>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>

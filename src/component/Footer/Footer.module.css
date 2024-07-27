@@ -1,0 +1,33 @@
+.footer {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    padding: 40px 0;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.sectionTitle {
+    font-size: 1.2rem;
+    color: #007bff; /* Blue text */
+    margin-bottom: 15px;
+}
+
+.list {
+    list-style-type: none;
+    padding: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.icons i, .socialIcons i {
+    font-size: 1.5rem;
+    margin-right: 10px;
+    color: white;
+}
+
+.socialIcons i:hover, .icons i:hover {
+    color: #007bff;
+    cursor: pointer;
+}

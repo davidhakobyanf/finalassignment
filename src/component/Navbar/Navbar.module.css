@@ -1,17 +1,56 @@
-/* src/components/Navbar.module.css */
 .navbar {
-    background-color: #f8f9fa; /* Customize as needed */
+    transition: top 0.3s ease-in-out; /* Smooth transition for showing/hiding */
+    position: fixed; /* Fix navbar at the top */
+    width: 100%; /* Full width */
+    z-index: 1000; /* Ensure it's above other content */
+    top: 0; /* Initial position */
+    background-color: #000; /* Black background */
+    padding: 10px 20px;
+}
+
+.hidden {
+    top: -100px; /* Hide the navbar by moving it above view */
+}
+
+.visible {
+    top: 0; /* Show the navbar */
 }
 
 .brand {
-    font-size: 1.5rem;
-    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px; /* Adjust as needed */
+    margin-right: 10px;
 }
 
 .navLink {
-    color: #007bff !important; /* Customize link colors */
+    color: #fff; /* White text color */
+    font-size: 16px;
+    padding: 10px 15px;
+    transition: color 0.3s ease; /* Smooth color transition */
 }
 
 .navLink:hover {
-    color: #0056b3 !important; /* Hover state */
+    color: #ddd; /* Light gray on hover */
+}
+
+.contact {
+    background-color: #fff; /* White background */
+    color: #000; /* Black text color */
+    border-radius: 5px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+}
+
+.contact:hover {
+    background-color: #f8f8f8; /* Slightly lighter background on hover */
+    color: #000;
+}
+
+.navigat {
+    display: flex;
+    justify-content: flex-end;
 }
