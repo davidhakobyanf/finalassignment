@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/finalassignment/static/css/main.aa9e95ea.css",
+    "main.js": "/finalassignment/static/js/main.53c46904.js",
+    "static/media/aerial-2203634_1920.jpg": "/finalassignment/static/media/aerial-2203634_1920.a23abe187d50aceb4f9c.jpg",
+    "static/media/lights-2203654_1920.jpg": "/finalassignment/static/media/lights-2203654_1920.281a49b4472bfff06a3c.jpg",
+    "static/media/large-wool-sliders-in-flight-5270891_1920.jpg": "/finalassignment/static/media/large-wool-sliders-in-flight-5270891_1920.c5f1ad0d7fd7fe619e4d.jpg",
+    "static/media/music-701238_1920.jpg": "/finalassignment/static/media/music-701238_1920.dce6c3640acdba85287a.jpg",
+    "index.html": "/finalassignment/index.html",
+    "main.aa9e95ea.css.map": "/finalassignment/static/css/main.aa9e95ea.css.map",
+    "main.53c46904.js.map": "/finalassignment/static/js/main.53c46904.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.aa9e95ea.css",
+    "static/js/main.53c46904.js"
+  ]
+}
